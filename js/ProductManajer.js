@@ -7,8 +7,8 @@ class ProductManager {
         this.productId = this.products.length > 0 ? this.products[this.products.length - 1].id + 1 : 1;
     }
 
-    addProduct(title, description, price, thumbnail, code, stock) {
-        if (!title || !description || !price || !thumbnail || !code || !stock) {
+    addProduct(title, description, price, code, status, stock) {
+        if (!title || !description || !price || !code || !stock) {
             throw new Error("Todos los campos son obligatorios");
         }
 
@@ -22,7 +22,6 @@ class ProductManager {
             title: title,
             description: description,
             price: price,
-            thumbnail: thumbnail,
             code: code,
             stock: stock
         };
@@ -81,29 +80,31 @@ class ProductManager {
 
 const manager = new ProductManager('./data/products.json');
 
-manager.addProduct("Monitor Asus", "Monitor Gamer de alta resolucion y refresco 144Hz", 10000, "imgAsus.jpg", 001, 2005);
-manager.addProduct("Mouse Logitech", "Mouse para videojuegos de alta sensibilidad", 2000, "imgLogi.jpg", 002, 1560);
-manager.addProduct("Teclado mecanico Hyperx", "Teclado gamer de alta respuesta y piezas intercambiables", 6000, "imgHyper.jpg", 003, 1250);
-manager.addProduct("Astro a50", "Audifonos Gamer inalambricos compatibles con PC, Xbox y PS", 5999, "imgAstro.jpg", 004, 1555);
-manager.addProduct("Xbox Series X", "Consola de videojuegos de alta gama", 12000, "imgXbox.jpg", 005, 6050);const allProducts = manager.getProducts();
+// manager.addProduct("Monitor Asus", "Monitor Gamer de alta resolucion y refresco 144Hz", 10000, "imgAsus.jpg", 001, 2005);
+// manager.addProduct("Mouse Logitech", "Mouse para videojuegos de alta sensibilidad", 2000, "imgLogi.jpg", 002, 1560);
+// manager.addProduct("Teclado mecanico Hyperx", "Teclado gamer de alta respuesta y piezas intercambiables", 6000, "imgHyper.jpg", 003, 1250);
+// manager.addProduct("Astro a50", "Audifonos Gamer inalambricos compatibles con PC, Xbox y PS", 5999, "imgAstro.jpg", 004, 1555);
+// manager.addProduct("Xbox Series X", "Consola de videojuegos de alta gama", 12000, "imgXbox.jpg", 005, 6050);const allProducts = manager.getProducts();
 
-console.log(allProducts);
+// console.log(allProducts);
 
 
-//Utilizar getProductById
-const productById = manager.getProductById(1);
-console.log(productById);
+// //Utilizar getProductById
+// const productById = manager.getProductById(1);
+// console.log(productById);
 
-//Utilizar updateProduct
-manager.updateProduct(1, { title: "Monitor LG" });
-const updatedProduct = manager.getProductById(1);
-console.log(updatedProduct);
+// //Utilizar updateProduct
+// manager.updateProduct(1, { title: "Monitor LG" });
+// const updatedProduct = manager.getProductById(1);
+// console.log(updatedProduct);
 
-//Utilizar deleteProduct
-manager.deleteProduct(1);
-try {
-    const deletedProduct = manager.getProductById(1);
-    console.log(deletedProduct);
-} catch (error) {
-    console.log(error.message);
-}
+// //Utilizar deleteProduct
+// manager.deleteProduct(1);
+// try {
+//     const deletedProduct = manager.getProductById(1);
+//     console.log(deletedProduct);
+// } catch (error) {
+//     console.log(error.message);
+// }
+
+module.exports = ProductManager;

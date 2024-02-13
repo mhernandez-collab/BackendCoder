@@ -43,5 +43,32 @@
     "thumbnail": "imgAsus.jpg",
     "code": 1,
     "stock": 2005
+  },
+  {
+    "id": 7,
+    "title": {
+      "title": "Monitor LG",
+      "description": "Descripción prueba",
+      "code": "123",
+      "price": 19.99,
+      "status": true,
+      "stock": 10
+    }
+  },
+  {
+    "id": 8,
+    "title": "Test Producto",
+    "description": "Descripción del Producto",
+    "price": 19.99,
+    "code": "ABC123",
+    "stock": 10
+  },
+  {
+    "id": 9,
+    "title": "Test Producto Actualizado",
+    "description": "Prueba Update",
+    "price": 9.99,
+    "code": "124",
+    "stock": 100
   }
 ]
